@@ -19,26 +19,5 @@ object Form1: TForm1
     Width = 585
     Height = 409
     TabOrder = 0
-    object tnb_notebook: TTabbedNotebook
-      Left = 1
-      Top = 1
-      Width = 583
-      Height = 407
-      Align = alClient
-      TabFont.Charset = DEFAULT_CHARSET
-      TabFont.Color = clBtnText
-      TabFont.Height = -11
-      TabFont.Name = 'Tahoma'
-      TabFont.Style = []
-      TabOrder = 0
-      ExplicitWidth = 409
-      object TTabPage
-        Left = 4
-        Top = 24
-        Caption = 'Default'
-        ExplicitWidth = 292
-        ExplicitHeight = 222
-      end
-    end
   end
 end

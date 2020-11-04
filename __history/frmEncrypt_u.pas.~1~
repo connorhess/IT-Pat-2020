@@ -9,6 +9,7 @@ uses
 type
   TForm1 = class(TForm)
     pnl_main: TPanel;
+    tnb_notebook: TTabbedNotebook;
   private
     { Private declarations }
   public
