@@ -24,7 +24,7 @@ object Form1: TForm1
       Top = 8
       Width = 825
       Height = 529
-      ActivePage = tab_decrypt
+      ActivePage = tab_encrypt
       TabHeight = 50
       TabOrder = 0
       TabWidth = 410
@@ -429,7 +429,6 @@ object Form1: TForm1
               Height = 25
               Caption = 'Encrypt'
               TabOrder = 0
-              OnClick = btn_encryptClick
             end
             object rdg_enc_type: TRadioGroup
               Left = 8
@@ -869,7 +868,6 @@ object Form1: TForm1
               Height = 25
               Caption = 'Decrypt'
               TabOrder = 0
-              OnClick = btn_decryptClick
             end
             object rdg_type_dec: TRadioGroup
               Left = 8

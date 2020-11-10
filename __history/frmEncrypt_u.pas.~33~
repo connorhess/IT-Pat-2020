@@ -50,7 +50,7 @@ type
 var
   Form1: TForm1;
   sEnc_message_input, sEnc_ascii, sDec_message_input, sEnc_message_output, sDec_message_output: string;
-  I, sEnc_ascii_pre: Integer;
+  I: Integer;
 
 implementation
 
@@ -82,14 +82,12 @@ begin
     sEnc_message_input := mem_input_enc.Text;
     for I := 1 to Length(sEnc_message_input) do
     begin
-      sEnc_ascii_pre := (Ord(sEnc_message_input[I])) + (spn_enc_offset.Value);
-
-      if sEnc_ascii_pre < 10 then
-        sEnc_ascii := sEnc_ascii + '00' + IntToStr(sEnc_ascii_pre)
-      else if sEnc_ascii_pre < 100 then
-        sEnc_ascii := sEnc_ascii + '0' + IntToStr(sEnc_ascii_pre)
+      if ((Ord(sEnc_message_input[I])) < 10)then
+        sEnc_ascii := sEnc_ascii + '00' + IntToStr(Ord(sEnc_message_input[I]))
+      else if (Ord(sEnc_message_input[I])) < 100 then
+        sEnc_ascii := sEnc_ascii + '0' + IntToStr(Ord(sEnc_message_input[I]))
       else
-        sEnc_ascii := sEnc_ascii + IntToStr(sEnc_ascii_pre);
+        sEnc_ascii := sEnc_ascii + IntToStr(Ord(sEnc_message_input[I]));
     end;
 
     sEnc_message_output := sEnc_ascii;

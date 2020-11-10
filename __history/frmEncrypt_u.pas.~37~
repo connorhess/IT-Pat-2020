@@ -49,8 +49,8 @@ type
 
 var
   Form1: TForm1;
-  sEnc_message_input, sEnc_ascii, sDec_message_input, sEnc_message_output, sDec_message_output: string;
-  I, sEnc_ascii_pre: Integer;
+  sEnc_message_input, sEnc_ascii_pre, sEnc_ascii, sDec_message_input, sEnc_message_output, sDec_message_output: string;
+  I: Integer;
 
 implementation
 
