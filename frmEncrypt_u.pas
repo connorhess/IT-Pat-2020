@@ -60,23 +60,27 @@ procedure TForm1.btn_decryptClick(Sender: TObject);
 begin
   if rdg_type_dec.ItemIndex = 0 then
   begin
+    sDec_ascii := '';
+    iCount := 3;
     sDec_message_input := mem_input_dec.Text;
-    ShowMessage(sDec_message_input[1]);
     for I := 1 to length(sDec_message_input) do
     begin
-      iCount := 0;
-      if I <> 1 then
+      if I > 1 then
       begin
-          iCount := iCount + 1;
+        if strToInt(sDec_message_input[1]) = (spn_mix.Value +2) then
+        begin
           if iCount = 3 then
           begin
             iCount := 0;
-            sDec_ascii := ((strToInt(sDec_message_input[I] + sDec_message_input[I+1] + sDec_message_input[I+2]))-spn_offsett);
-            ShowMessage(intToStr(sDec_ascii));
+            sDec_ascii := sDec_ascii + chr((strToInt(sDec_message_input[I] + sDec_message_input[I+1] + sDec_message_input[I+2])) - spn_offsett.Value);
           end;
+          iCount := iCount + 1;
+        end;
       end;
     end;
 
+    mem_output_dec.Clear;
+    mem_output_dec.Text := sDec_ascii;
   end
   else if rdg_type_dec.ItemIndex = 1 then
   begin
