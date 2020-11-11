@@ -49,8 +49,8 @@ type
 
 var
   Form1: TForm1;
-  sEnc_message_input, sEnc_ascii, sDec_message_input, sEnc_message_output, sDec_message_output: string;
-  I, sEnc_ascii_pre: Integer;
+  sEnc_message_input, sEnc_ascii, sDec_ascii, sDec_message_input, sEnc_message_output, sDec_message_output: string;
+  I, sEnc_ascii_pre, iCount: Integer;
 
 implementation
 
@@ -60,7 +60,23 @@ procedure TForm1.btn_decryptClick(Sender: TObject);
 begin
   if rdg_type_dec.ItemIndex = 0 then
   begin
-    ShowMessage('Custom')
+    sDec_message_input := mem_input_dec.Text;
+    ShowMessage(sDec_message_input[1]);
+    for I := 1 to length(sDec_message_input) do
+    begin
+      iCount := 0;
+      if I <> 1 then
+      begin
+          iCount := iCount + 1;
+          if iCount = 3 then
+          begin
+            iCount := 0;
+            sDec_ascii := ((strToInt(sDec_message_input[I] + sDec_message_input[I+1] + sDec_message_input[I+2]))-spn_offsett);
+            ShowMessage(intToStr(sDec_ascii));
+          end;
+      end;
+    end;
+
   end
   else if rdg_type_dec.ItemIndex = 1 then
   begin
@@ -92,7 +108,7 @@ begin
         sEnc_ascii := sEnc_ascii + IntToStr(sEnc_ascii_pre);
     end;
 
-    sEnc_message_output := sEnc_ascii;
+    sEnc_message_output := (intToStr(spn_enc_mix.Value + 2) + sEnc_ascii);
 
     mem_output_enc.Clear;
     mem_output_enc.Text := sEnc_message_output;

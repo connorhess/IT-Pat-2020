@@ -50,7 +50,7 @@ type
 var
   Form1: TForm1;
   sEnc_message_input, sEnc_ascii, sDec_message_input, sEnc_message_output, sDec_message_output: string;
-  I: Integer;
+  I, sEnc_ascii_pre: Integer;
 
 implementation
 
@@ -78,18 +78,24 @@ var
 begin
   if rdg_enc_type.ItemIndex = 0 then
   begin
+    sEnc_ascii := '';
     sEnc_message_input := mem_input_enc.Text;
     for I := 1 to Length(sEnc_message_input) do
     begin
-      if ((Ord(sEnc_message_input[I])) < 10)then
-        sEnc_ascii := sEnc_ascii + '00' + IntToStr(Ord(sEnc_message_input[I]))
-      else if (Ord(sEnc_message_input[I])) < 100 then
-        sEnc_ascii := sEnc_ascii + '0' + IntToStr(Ord(sEnc_message_input[I]));
+      sEnc_ascii_pre := (Ord(sEnc_message_input[I])) + (spn_enc_offset.Value);
+
+      if sEnc_ascii_pre < 10 then
+        sEnc_ascii := sEnc_ascii + '00' + IntToStr(sEnc_ascii_pre)
+      else if sEnc_ascii_pre < 100 then
+        sEnc_ascii := sEnc_ascii + '0' + IntToStr(sEnc_ascii_pre)
+      else
+        sEnc_ascii := sEnc_ascii + IntToStr(sEnc_ascii_pre);
     end;
 
-    sEnc_message_output := sEnc_ascii;
-    ShowMessage(sEnc_message_output);
-    mem_output_enc.Text := sEnc_message_output
+    sEnc_message_output := strToInt(('1' + sEnc_ascii))/spn_enc_mix.Value;
+
+    mem_output_enc.Clear;
+    mem_output_enc.Text := sEnc_message_output;
   end
   else if rdg_enc_type.ItemIndex = 1 then
   begin

@@ -398,6 +398,7 @@ object Form1: TForm1
             Top = 27
             Width = 281
             Height = 414
+            ReadOnly = True
             TabOrder = 1
           end
           object Panel2: TPanel
@@ -428,6 +429,7 @@ object Form1: TForm1
               Height = 25
               Caption = 'Encrypt'
               TabOrder = 0
+              OnClick = btn_encryptClick
             end
             object rdg_enc_type: TRadioGroup
               Left = 8
@@ -836,6 +838,7 @@ object Form1: TForm1
             Top = 27
             Width = 281
             Height = 414
+            ReadOnly = True
             TabOrder = 1
           end
           object pnl_decrypt_options: TPanel
@@ -866,6 +869,7 @@ object Form1: TForm1
               Height = 25
               Caption = 'Decrypt'
               TabOrder = 0
+              OnClick = btn_decryptClick
             end
             object rdg_type_dec: TRadioGroup
               Left = 8
