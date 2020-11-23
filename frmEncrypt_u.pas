@@ -99,6 +99,7 @@ begin
 
     mem_output_dec.Clear;
     mem_output_dec.Text := sDec_message_output;
+    sDec_message_output := '';
   end
   else if rdg_type_dec.ItemIndex = 1 then
   begin
@@ -123,6 +124,7 @@ begin
 
     mem_output_dec.Clear;
     mem_output_dec.Text := sDec_ascii;
+    sDec_ascii := ''
   end
   else
   begin
@@ -169,6 +171,7 @@ begin
 
     mem_output_enc.Clear;
     mem_output_enc.Text := sFinal_string;
+    sFinal_string := ''
 
   end
   else if rdg_enc_type.ItemIndex = 1 then
@@ -191,6 +194,7 @@ begin
 
     mem_output_enc.Clear;
     mem_output_enc.Text := sEnc_message_output;
+    sEnc_message_output := ''
   end
   else
   begin
