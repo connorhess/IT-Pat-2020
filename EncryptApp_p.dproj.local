@@ -2,8 +2,8 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2020/11/04 11:17:09.000.949,=C:\Users\conno\OneDrive\Documents\Delphi\Unit1.pas</Transaction>
-    <Transaction>2020/11/04 11:20:02.000.974,C:\Users\conno\OneDrive\Documents\Delphi\Unit1.pas=C:\Users\conno\OneDrive\Documents\Delphi\pat\Pat 2020\frmEncrypt_u.pas</Transaction>
-    <Transaction>2020/11/04 11:20:02.000.974,C:\Users\conno\OneDrive\Documents\Delphi\Unit1.dfm=C:\Users\conno\OneDrive\Documents\Delphi\pat\Pat 2020\frmEncrypt_u.dfm</Transaction>
-    <Transaction>2020/11/04 11:20:17.000.028,C:\Users\conno\OneDrive\Documents\Delphi\Project1.dproj=C:\Users\conno\OneDrive\Documents\Delphi\pat\Pat 2020\EncryptApp_p.dproj</Transaction>
+    <Transaction>2020/11/04 11:20:02.000.974,C:\Users\conno\OneDrive\Documents\Delphi\pat\Pat 2020\frmEncrypt_u.pas=C:\Users\conno\OneDrive\Documents\Delphi\Unit1.pas</Transaction>
+    <Transaction>2020/11/04 11:20:02.000.974,C:\Users\conno\OneDrive\Documents\Delphi\pat\Pat 2020\frmEncrypt_u.dfm=C:\Users\conno\OneDrive\Documents\Delphi\Unit1.dfm</Transaction>
+    <Transaction>2020/11/04 11:20:17.000.028,C:\Users\conno\OneDrive\Documents\Delphi\pat\Pat 2020\EncryptApp_p.dproj=C:\Users\conno\OneDrive\Documents\Delphi\Project1.dproj</Transaction>
   </Transactions>
 </BorlandProject>

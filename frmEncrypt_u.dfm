@@ -1,7 +1,7 @@
-object Form1: TForm1
+object Agency_Encryption: TAgency_Encryption
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'Agency Encryption'
   ClientHeight = 525
   ClientWidth = 813
   Color = clBtnFace
@@ -25,11 +25,16 @@ object Form1: TForm1
       Width = 825
       Height = 529
       ActivePage = tab_decrypt
+      MultiLine = True
       TabHeight = 50
       TabOrder = 0
       TabWidth = 410
       object tab_encrypt: TTabSheet
         Caption = 'Encrypt'
+        ExplicitLeft = 0
+        ExplicitTop = 0
+        ExplicitWidth = 0
+        ExplicitHeight = 0
         object Panel1: TPanel
           Left = 0
           Top = 3
@@ -391,14 +396,21 @@ object Form1: TForm1
             Top = 27
             Width = 293
             Height = 414
+            Hint = 'Enter a message here fo encyrpt it.'
+            ParentShowHint = False
+            ShowHint = True
             TabOrder = 0
+            WantTabs = True
           end
           object mem_output_enc: TMemo
             Left = 512
             Top = 27
             Width = 281
             Height = 414
+            Hint = 'Send thius message to the reciver'
+            ParentShowHint = False
             ReadOnly = True
+            ShowHint = True
             TabOrder = 1
           end
           object Panel2: TPanel
@@ -438,8 +450,8 @@ object Form1: TForm1
               Height = 105
               Caption = 'Encryption Type'
               Items.Strings = (
-                'Custom Shift'
-                'UTF-8')
+                'Custom Encryption'
+                'Ceasar Shift')
               TabOrder = 1
             end
             object spn_enc_mix: TSpinEdit
@@ -831,14 +843,21 @@ object Form1: TForm1
             Top = 27
             Width = 293
             Height = 414
+            Hint = 'Insert the Encrypted message here'
+            ParentShowHint = False
+            ShowHint = True
             TabOrder = 0
+            WantTabs = True
           end
           object mem_output_dec: TMemo
             Left = 512
             Top = 27
             Width = 281
             Height = 414
+            Hint = 'Readable Message if you entered the correct '#39'offset'#39' and '#39'mix'#39
+            ParentShowHint = False
             ReadOnly = True
+            ShowHint = True
             TabOrder = 1
           end
           object pnl_decrypt_options: TPanel
@@ -878,8 +897,8 @@ object Form1: TForm1
               Height = 105
               Caption = 'Decryption Type'
               Items.Strings = (
-                'Custom Shift'
-                'UTF-8')
+                'Custom Encryption'
+                'Ceasar Shift')
               TabOrder = 1
             end
             object spn_mix: TSpinEdit

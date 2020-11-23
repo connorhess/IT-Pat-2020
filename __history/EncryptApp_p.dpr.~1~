@@ -2,13 +2,13 @@ program EncryptApp_p;
 
 uses
   Vcl.Forms,
-  frmEncrypt_u in 'frmEncrypt_u.pas' {Agency_Encryption};
+  frmEncrypt_u in 'frmEncrypt_u.pas' {Form1};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TAgency_Encryption, Agency_Encryption);
+  Application.CreateForm(TForm1, Form1);
   Application.Run;
 end.

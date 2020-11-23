@@ -74,6 +74,9 @@ begin
         begin
           iWord_position := I+3;
           iWord_length := StrToInt(sDec_message_input[I+1]);
+
+          ShowMessage(IntToStr(iWord_position));
+          ShowMessage(IntToStr(iWord_length));
         end;
       end;
 
@@ -82,23 +85,22 @@ begin
         for I2 := I to I + iWord_length-1 do
           begin
             sReverce_first_last := sReverce_first_last + sDec_message_input[I2+2];
+            ShowMessage(sReverce_first_last);
           end;
 
         for I2 := 1 to iWord_length do
-        begin
-          sFinal_string := sFinal_string + sReverce_first_last[(iWord_length+1)-I2];
-        end;
+          sFinal_string := sFinal_string + sReverce_first_last[iWord_length-I2];
 
         sReverce_first_last := '';
-        sDec_message_output := sDec_message_output + ' ' + sFinal_string;
+        sDec_message_input := sDec_message_input + ' ' + sFinal_string;
         sFinal_string := '';
       end;
 
 
     end;
 
-    mem_output_dec.Clear;
-    mem_output_dec.Text := sDec_message_output;
+    mem_output_enc.Clear;
+    mem_output_enc.Text := sDec_message_input;
   end
   else if rdg_type_dec.ItemIndex = 1 then
   begin
